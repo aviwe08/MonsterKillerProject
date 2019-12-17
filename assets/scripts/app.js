@@ -1,6 +1,13 @@
 let chosenMaxLife = 100;
 let hasBonusLife =  true;
 
+const enteredValue = prompt("Please enter the Maximum Life Value", "100");
+chosenMaxLife = parseInt(enteredValue).
+
+if( isNaN(chosenMaxLife) || chosenMaxLife <= 0){
+  chosenMaxLife = 100;
+  alert("Invalid Entry, Default Set to 100");
+}
 const ATTACK_VALUE = 10;
 const STRONG_ATTACK_VALUE = 19;
 const MONSTER_ATTACK_VALUE = 14;
