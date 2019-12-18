@@ -2,7 +2,7 @@ let chosenMaxLife = 100;
 let hasBonusLife =  true;
 
 const enteredValue = prompt("Please enter the Maximum Life Value", "100");
-chosenMaxLife = parseInt(enteredValue).
+chosenMaxLife = parseInt(enteredValue);
 
 if( isNaN(chosenMaxLife) || chosenMaxLife <= 0){
   chosenMaxLife = 100;
