@@ -1,17 +1,20 @@
 let chosenMaxLife = 100;
 let hasBonusLife =  true;
-
+const MODE_ATTACK = "ATTACK";
+const MODE_STRONG_ATTACK = "STRONG_ATTACK"
+const ATTACK_VALUE = 10;
+const STRONG_ATTACK_VALUE = 19;
+const MONSTER_ATTACK_VALUE = 14;
+const HEAL_VALUE = chosenMaxLife * 0.35;
 const enteredValue = prompt("Please enter the Maximum Life Value", "100");
+const 
 chosenMaxLife = parseInt(enteredValue);
 
 if( isNaN(chosenMaxLife) || chosenMaxLife <= 0){
   chosenMaxLife = 100;
   alert("Invalid Entry, Default Set to 100");
 }
-const ATTACK_VALUE = 10;
-const STRONG_ATTACK_VALUE = 19;
-const MONSTER_ATTACK_VALUE = 14;
-const HEAL_VALUE = chosenMaxLife * 0.35;
+
 
 let currentMosterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
@@ -20,9 +23,9 @@ adjustHealthBars(chosenMaxLife);
 
 function attackSelection(attackType) {
   let damageSelection;
-  if (attackType === "ATTACK") {
+  if (attackType === MODE_ATTACK) {
     damageSelection = ATTACK_VALUE;
-  } else if (attackType === "STRONG_ATTACK") {
+  } else if (attackType === MODE_STRONG_ATTACK) {
     damageSelection = STRONG_ATTACK_VALUE;
   } else {
     return;
@@ -57,12 +60,11 @@ function endRound() {
   }
 }
 function attackHandler() {
-  const attackMode = "ATTACK";
-  attackSelection("ATTACK");
+  attackSelection(MODE_ATTACK);
 }
 
 function strongAttackHandler() {
-  attackSelection("STRONG_ATTACK");
+  attackSelection(MODE_STRONG_ATTACK);
 }
 
 function resetPlay() {
